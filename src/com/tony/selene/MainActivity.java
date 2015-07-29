@@ -1,21 +1,19 @@
 package com.tony.selene;
 
-import com.ab.activity.AbActivity;
-import com.ab.view.progress.AbCircleProgressBar;
-import com.tony.selene.security.SecurityCode;
-
-import android.app.Activity;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class MainActivity extends AbActivity {
+import com.tony.selene.security.SecurityCode;
+
+public class MainActivity extends FragmentActivity {
 	private ImageView mTxtContent1;
-	
+
 	private TextView mTxtContent2;
 	private Button mBtn1, mBtn2;
 	private TextView mTxtTime1, mTxtTime2;
