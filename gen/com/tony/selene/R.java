@@ -9,24 +9,82 @@ package com.tony.selene;
 
 public final class R {
     public static final class attr {
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int isAutoLoadOnBottom=0x7f010002;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int isDropDownStyle=0x7f010000;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int isOnBottomStyle=0x7f010001;
+    }
+    public static final class color {
+        /**  drop down list footer font color 
+         */
+        public static final int drop_down_list_footer_font_color=0x7f050002;
+        /**  drop down list header font color 
+         */
+        public static final int drop_down_list_header_font_color=0x7f050000;
+        /**  drop down list header second font color 
+         */
+        public static final int drop_down_list_header_second_font_color=0x7f050001;
+    }
+    public static final class dimen {
+        public static final int drop_down_list_footer_button_height=0x7f060006;
+        public static final int drop_down_list_footer_button_margin_left=0x7f060005;
+        public static final int drop_down_list_footer_progress_bar_height=0x7f060004;
+        public static final int drop_down_list_header_padding_bottom=0x7f060001;
+        public static final int drop_down_list_header_padding_top=0x7f060000;
+        public static final int drop_down_list_header_progress_bar_height=0x7f060003;
+        public static final int drop_down_list_header_release_min_distance=0x7f060002;
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
+        public static final int drop_down_list_arrow=0x7f020000;
+        public static final int ic_launcher=0x7f020001;
     }
     public static final class id {
-        public static final int btn_ok1=0x7f060001;
-        public static final int btn_ok2=0x7f060004;
-        public static final int iv_content1=0x7f060000;
-        public static final int tv_content2=0x7f060003;
-        public static final int tv_time1=0x7f060002;
-        public static final int tv_time2=0x7f060005;
+        public static final int btn_utils=0x7f080000;
+        public static final int drop_down_list_footer_button=0x7f080002;
+        public static final int drop_down_list_footer_progress_bar=0x7f080001;
+        public static final int drop_down_list_header_default_text=0x7f080006;
+        public static final int drop_down_list_header_default_text_layout=0x7f080004;
+        public static final int drop_down_list_header_image=0x7f080005;
+        public static final int drop_down_list_header_progress_bar=0x7f080003;
+        public static final int drop_down_list_header_second_text=0x7f080007;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
+        public static final int drop_down_list_footer=0x7f030001;
+        public static final int drop_down_list_header=0x7f030002;
     }
     public static final class string {
         public static final int app_name=0x7f040000;
+        public static final int drop_down_list_footer_default_text=0x7f040006;
+        public static final int drop_down_list_footer_loading_text=0x7f040007;
+        public static final int drop_down_list_footer_no_more_text=0x7f040008;
+        public static final int drop_down_list_header_default_text=0x7f040002;
+        public static final int drop_down_list_header_loading_text=0x7f040005;
+        public static final int drop_down_list_header_pull_text=0x7f040003;
+        public static final int drop_down_list_header_release_text=0x7f040004;
         public static final int hello_world=0x7f040001;
+        public static final int image_content=0x7f040009;
+        public static final int text_main_btn_utils=0x7f04000a;
     }
     public static final class style {
         /** 
@@ -50,10 +108,76 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f050000;
+        public static final int AppBaseTheme=0x7f070000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f050001;
+        public static final int AppTheme=0x7f070001;
+        public static final int drop_down_list_footer_font_style=0x7f070006;
+        public static final int drop_down_list_footer_progress_bar_style=0x7f070003;
+        public static final int drop_down_list_header_font_style=0x7f070004;
+        public static final int drop_down_list_header_progress_bar_style=0x7f070002;
+        public static final int drop_down_list_header_second_font_style=0x7f070005;
     }
+    public static final class styleable {
+        /** Attributes that can be used with a drop_down_list_attr.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #drop_down_list_attr_isAutoLoadOnBottom com.tony.selene:isAutoLoadOnBottom}</code></td><td></td></tr>
+           <tr><td><code>{@link #drop_down_list_attr_isDropDownStyle com.tony.selene:isDropDownStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #drop_down_list_attr_isOnBottomStyle com.tony.selene:isOnBottomStyle}</code></td><td></td></tr>
+           </table>
+           @see #drop_down_list_attr_isAutoLoadOnBottom
+           @see #drop_down_list_attr_isDropDownStyle
+           @see #drop_down_list_attr_isOnBottomStyle
+         */
+        public static final int[] drop_down_list_attr = {
+            0x7f010000, 0x7f010001, 0x7f010002
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.tony.selene.R.attr#isAutoLoadOnBottom}
+          attribute's value can be found in the {@link #drop_down_list_attr} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.tony.selene:isAutoLoadOnBottom
+        */
+        public static final int drop_down_list_attr_isAutoLoadOnBottom = 2;
+        /**
+          <p>This symbol is the offset where the {@link com.tony.selene.R.attr#isDropDownStyle}
+          attribute's value can be found in the {@link #drop_down_list_attr} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.tony.selene:isDropDownStyle
+        */
+        public static final int drop_down_list_attr_isDropDownStyle = 0;
+        /**
+          <p>This symbol is the offset where the {@link com.tony.selene.R.attr#isOnBottomStyle}
+          attribute's value can be found in the {@link #drop_down_list_attr} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.tony.selene:isOnBottomStyle
+        */
+        public static final int drop_down_list_attr_isOnBottomStyle = 1;
+    };
 }
