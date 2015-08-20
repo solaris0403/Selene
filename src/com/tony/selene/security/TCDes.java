@@ -50,7 +50,7 @@ public class TCDes {
 			Cipher cipher = Cipher.getInstance("DES/CBC/PKCS5Padding");
 			cipher.init(Cipher.ENCRYPT_MODE, key, zeroIv);
 			byte[] encryptedData = cipher.doFinal(encryptByte);
-			return AbBase64.encode(encryptedData);
+			return TCBase64.encode(encryptedData);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -59,7 +59,7 @@ public class TCDes {
 
 	public byte[] decrypt(String encryptString, String encryptKey) {
 		try {
-			byte[] encryptByte = AbBase64.decode(encryptString);
+			byte[] encryptByte = TCBase64.decode(encryptString);
 			IvParameterSpec zeroIv = new IvParameterSpec(iv);
 			SecretKeySpec key = new SecretKeySpec(encryptKey.getBytes(), "DES");
 			Cipher cipher = Cipher.getInstance("DES/CBC/PKCS5Padding");

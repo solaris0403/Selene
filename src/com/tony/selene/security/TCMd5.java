@@ -11,7 +11,7 @@ import java.security.NoSuchAlgorithmException;
  * @author KEZHUANG
  * 
  */
-public class TCMD5{
+public class TCMd5{
 	/**
 	 * Log的开关<br>
 	 * true为开启<br>
@@ -100,7 +100,7 @@ public class TCMD5{
 	}
 
 	// 这是MD5这个类的标准构造函数，JavaBean要求有一个public的并且没有参数的构造函数
-	public TCMD5() {
+	public TCMd5() {
 		md5Init();
 
 		return;
