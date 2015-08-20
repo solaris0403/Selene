@@ -5,8 +5,8 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="9"
-        android:targetSdkVersion="21" />
+        android:minSdkVersion="8"
+        android:targetSdkVersion="23" />
 
     <application
         android:allowBackup="true"
@@ -22,7 +22,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.tony.selene.TCUtilsActivity"/>
+
+        <meta-data
+            android:name="meta_key"
+            android:value="meta_value" >
+        </meta-data>
+
+        <activity android:name="com.tony.selene.TCUtilsActivity" />
     </application>
 
 </manifest>
