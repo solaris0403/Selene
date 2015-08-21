@@ -12,6 +12,5 @@
     <string name="drop_down_list_footer_loading_text">Loading&#8230;</string>
     <string name="drop_down_list_footer_no_more_text">No More</string>
     <string name="image_content">Image</string>
-    <string name="text_main_btn_utils">Utils工具類</string>
 
 </resources>

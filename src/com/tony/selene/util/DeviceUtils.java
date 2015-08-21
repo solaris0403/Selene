@@ -1,11 +1,18 @@
 package com.tony.selene.util;
 
+import java.io.File;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
+import android.app.ActivityManager;
 import android.content.Context;
+import android.os.Environment;
+import android.os.StatFs;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
+import android.text.format.Formatter;
+import android.widget.Toast;
 
 /**
  * 获取手机信息工具类<br>
@@ -89,4 +96,88 @@ public class DeviceUtils {
 	public static String doNullStr(String str) {
 		return TextUtils.isEmpty(str) ? "" : str;
 	}
+	
+//	 public static int getRunningAppProcesses(Context context) {// 得到当前系统内运行的app进程数量
+//	        ActivityManager am = (ActivityManager) context
+//	                .getSystemService(Context.ACTIVITY_SERVICE);
+//	        List<Runningappprocessinfo> appInfos = am.getRunningAppProcesses();
+//	        return appInfos.size();
+//	    }
+//	 
+//	    public static List<hashmap<string, object="">> getAppInfo(Context context) {// 得到非系统应用的app信息
+//	        List<hashmap<string, object="">> appInfos = new ArrayList<hashmap<string, object="">>();
+//	        HashMap<string, object=""> map = null;
+//	        List<packageinfo> packages = context.getPackageManager()
+//	                .getInstalledPackages(0);// 参数传入0表示过滤权限，因为可能有的手机不让你获取应用信息
+//	        for (PackageInfo temp : packages) {
+//	            if ((temp.applicationInfo.flags & temp.applicationInfo.FLAG_SYSTEM) == 0) {
+//	                // 非系统应用
+//	                // 得到应用的名称
+//	                String appName = temp.applicationInfo.loadLabel(
+//	                        context.getPackageManager()).toString();
+//	                // 得到应用图标
+//	                Drawable appIcon = temp.applicationInfo.loadIcon(context
+//	                        .getPackageManager());
+//	                // 得到应用最后一次更新的时间
+//	                long lastUpdateTime = temp.lastUpdateTime;
+//	                // 得到应用的包名
+//	                String packageName = temp.packageName;
+//	                // 得到应用的版本信息
+//	                String versionName = temp.versionName;
+//	                map = new HashMap<string, object="">();
+//	                map.put(appName, appName);
+//	                map.put(appIcon, appIcon);
+//	                map.put(lastUpdateTime, lastUpdateTime);
+//	                map.put(packageName, packageName);
+//	                map.put(versionName, versionName);
+//	                appInfos.add(map);// 把应用信息加入集合中返回
+//	                map = null;
+//	            } else {
+//	                // 系统应用
+//	            }
+//	        }
+//	        return appInfos;
+//	    }
+	 
+	    // 获取sd卡容量
+//	    public static String getSdSize(Context context) {
+//	        String totalStr = null, availStr = null;
+//	        if (Environment.getExternalStorageState().equals(
+//	                Environment.MEDIA_MOUNTED)) {// 判断是否检测到sd卡
+//	            File path = Environment.getExternalStorageDirectory();
+//	            StatFs stat = new StatFs(path.getPath());
+//	 
+//	            long blockSize = stat.getBlockSizeLong();
+//	            long availableBlocks = stat.getAvailableBlocksLong();
+//	            long totalBlocks = stat.getBlockCountLong();
+//	 
+//	            long totalSize = blockSize * totalBlocks;
+//	            long availSize = blockSize * availableBlocks;
+//	 
+//	            totalStr = Formatter.formatFileSize(context, totalSize);
+//	            availStr = Formatter.formatFileSize(context, availSize);
+//	 
+//	        } else
+//	            Toast.makeText(context, "没有检测到SD卡，请检查是否正确插入", Toast.LENGTH_SHORT).show();
+//	        return "SD卡总容量为: "+ totalStr + "可用为:" + availStr;
+//	    }
+//	 
+//	    // 获取手机内存
+//	    public static String getRomSave(Context context) {
+//	        String totalStr = null, availStr = null;
+//	        File path = Environment.getDataDirectory();
+//	        StatFs stat = new StatFs(path.getPath());// 得到手机内存的路径
+//	 
+//	        long blockSize = stat.getBlockSizeLong();
+//	        long availableBlocks = stat.getAvailableBlocksLong();
+//	        long totalBlocks = stat.getBlockCountLong();
+//	 
+//	        long totalSize = blockSize * totalBlocks;
+//	        long availSize = blockSize * availableBlocks;
+//	 
+//	        totalStr = Formatter.formatFileSize(context, totalSize);
+//	        availStr = Formatter.formatFileSize(context, availSize);
+//	         
+//	        return "手机内存总大小为:" + totalStr + "可用空间为:" + availStr;
+//	    }
 }

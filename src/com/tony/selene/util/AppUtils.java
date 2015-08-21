@@ -123,7 +123,8 @@ public class AppUtils {
 	}
 
 	/**
-	 * Whether application is in background
+	 * Whether application is in background<br>
+	 * Need add android.permission.GET_TASKS
 	 * 
 	 * @param context
 	 * @return if application is in background return true , otherwise return
@@ -142,7 +143,7 @@ public class AppUtils {
 	}
 
 	/**
-	 * 获取Manifest中的meta-data值
+	 * 获取Manifest-application中的meta-data值,(注意)不是組件中的值
 	 * 
 	 * @param context
 	 * @param metaKey
@@ -163,7 +164,6 @@ public class AppUtils {
 				values = metaData.getString(metaKey);
 			}
 		} catch (NameNotFoundException e) {
-
 		}
 		return values;
 	}
