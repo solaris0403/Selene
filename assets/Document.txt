@@ -1,0 +1,24 @@
+//完成
+
+
+
+
+
+
+//已验证
+一.Activity
+	TCBaseActivity：所有Activity的父类，针对所生成的实例进行统一的布局加载以及数据添加，在创建以及结束时自动添加到数组中，统一销毁
+	TCActivityManager：有一个LinkedList。生成单例对象，对Activity进行添加，移出，全部清除。
+	TCActivityUtils：Activity工具类，目前只有一个转跳方法
+二.Application
+	TCBaseApplication:Application的父类，继承自Application，其中有一个方法：onTerminate。可以结束当前应用所有的Activity，达到结束应用的目的。
+
+
+
+//整理
+三.Adapter
+	QuickAdapter:开源项目，可以方便加载ListView数据。
+四.cache
+	ACache：开源项目，一个缓存类
+五.security
+	一个包含MD5,BASE64.AES，验证码等加密相关的类

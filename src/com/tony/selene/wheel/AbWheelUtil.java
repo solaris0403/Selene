@@ -25,7 +25,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.tony.selene.activity.AbActivity;
+import com.tony.selene.activity.TCBaseActivity;
 import com.tony.selene.util.AbDateUtil;
 import com.tony.selene.util.AbDialogUtil;
 import com.tony.selene.util.AbStrUtil;
@@ -62,7 +62,7 @@ public class AbWheelUtil {
 	 * @param endYearOffset 结束的年与开始的年的偏移
 	 * @param initStart  轮子是否初始化默认时间为当前时间
 	 */
-	public static void initWheelDatePicker(final AbActivity activity,final TextView mText,final AbWheelView mWheelViewY,final AbWheelView mWheelViewM,final AbWheelView mWheelViewD,
+	public static void initWheelDatePicker(final TCBaseActivity activity,final TextView mText,final AbWheelView mWheelViewY,final AbWheelView mWheelViewM,final AbWheelView mWheelViewD,
 			 Button okBtn,Button cancelBtn,
 			 int defaultYear,int defaultMonth,int defaultDay,final int startYear,int endYearOffset,boolean initStart){
 		
@@ -221,7 +221,7 @@ public class AbWheelUtil {
 	 * @param initStart the init start
 	 * @date：2013-7-16 上午10:19:01
 	 */
-	public static void initWheelTimePicker(final AbActivity activity,final TextView mText,final AbWheelView mWheelViewMD,final AbWheelView mWheelViewHH,final AbWheelView mWheelViewMM,
+	public static void initWheelTimePicker(final TCBaseActivity activity,final TextView mText,final AbWheelView mWheelViewMD,final AbWheelView mWheelViewHH,final AbWheelView mWheelViewMM,
 			 Button okBtn,Button cancelBtn,
 			 int defaultYear,int defaultMonth,int defaultDay,int defaultHour,int defaultMinute,boolean initStart){
 		Calendar calendar = Calendar.getInstance();
@@ -354,7 +354,7 @@ public class AbWheelUtil {
 	 * @param defaultMinute the default minute
 	 * @param initStart the init start
 	 */
-	public static void initWheelTimePicker2(final AbActivity activity,final TextView mText,final AbWheelView mWheelViewHH,final AbWheelView mWheelViewMM,
+	public static void initWheelTimePicker2(final TCBaseActivity activity,final TextView mText,final AbWheelView mWheelViewHH,final AbWheelView mWheelViewMM,
 			 Button okBtn,Button cancelBtn,
 			 int defaultHour,int defaultMinute,boolean initStart){
 		Calendar calendar = Calendar.getInstance();

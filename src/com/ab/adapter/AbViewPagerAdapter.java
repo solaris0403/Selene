@@ -118,6 +118,4 @@ public class AbViewPagerAdapter extends PagerAdapter{
 	public int getItemPosition(Object object) {
 		return POSITION_NONE;
 	}
-	
-
 }
