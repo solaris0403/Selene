@@ -4,12 +4,20 @@ import android.app.Activity;
 import android.content.Intent;
 
 /**
- * @author Tony E-mail:solaris0403@gmail.com
- * @version Create Data：Aug 20, 2015 6:12:18 PM
+ * @ClassName TCActivityUtils
+ * @Description Activity工具类
+ * @author Tony.Cao E-mail:solaris0403@gmail.com
+ * @date Aug 31, 2015
  */
 public class TCActivityUtils {
 	/**
-	 * 开启新的activity
+	 * @Title startActivity
+	 * @Description Activity转跳
+	 * @param context
+	 * @param clazz
+	 * @param isFinish
+	 *            是否关闭当前Activity
+	 * @return void
 	 */
 	public static void startActivity(Activity context, Class<?> clazz, boolean isFinish) {
 		Intent intent = new Intent(context, clazz);

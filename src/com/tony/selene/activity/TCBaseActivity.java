@@ -4,8 +4,10 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 
 /**
- * @author Tony E-mail:solaris0403@gmail.com
- * @version Create Data：Aug 20, 2015 5:44:30 PM
+ * @ClassName TCBaseActivity
+ * @Description 所有Activity的父类 需要继承当前类
+ * @author Tony.Cao E-mail:solaris0403@gmail.com
+ * @date Aug 31, 2015
  */
 public abstract class TCBaseActivity extends FragmentActivity {
 	@Override
@@ -14,41 +16,48 @@ public abstract class TCBaseActivity extends FragmentActivity {
 		int layoutId = getLayoutId();
 		if (layoutId != 0) {
 			setContentView(layoutId);
+			//Clear default background
 			getWindow().setBackgroundDrawable(null);
 		}
 		TCActivityManager.getInstance().addActivity(this);
-		// 向用户展示信息前的准备工作在这个方法里处理
 		preliminary();
 	}
 
 	/**
-	 * 布局文件ID
-	 * 
-	 * @return
+	 * @Title getLayoutId
+	 * @Description 布局文件ID
+	 * @return int
 	 */
 	protected abstract int getLayoutId();
 
 	/**
-	 * 向用户展示信息前的准备工作在这个方法里处理
+	 * @Title preliminary
+	 * @Description 向用户展示信息前的准备工作在这个方法里处理
+	 * @return void
 	 */
 	protected void preliminary() {
-		// 初始化组件
 		setupViews();
-		// 初始化数据
 		initialized();
 	}
 
 	/**
-	 * 初始化组件
+	 * @Title setupViews
+	 * @Description 初始化组件
+	 * @return void
 	 */
 	protected abstract void setupViews();
 
 	/**
-	 * 初始化数据
+	 * @Title initialized
+	 * @Description 初始化数据
+	 * @return void
 	 */
 	protected abstract void initialized();
 
-	// 带有右进右出动画的退出
+	/*
+	 * (非 Javadoc) 带有右进右出动画的退出
+	 * @see android.app.Activity#finish()
+	 */
 	@Override
 	public void finish() {
 		TCActivityManager.getInstance().removeActivity(this);
