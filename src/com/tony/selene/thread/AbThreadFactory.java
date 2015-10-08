@@ -26,59 +26,53 @@ import java.util.concurrent.atomic.AtomicInteger;
 import android.os.Process;
 
 import com.tony.selene.util.AbAppUtil;
+
 // TODO: Auto-generated Javadoc
 
 /**
- * © 2012 amsoft.cn
- * 名称：AbThreadFactory.java 
- * 描述：线程工厂.
+ * © 2012 amsoft.cn 名称：AbThreadFactory.java 描述：线程工厂.
  *
  * @author 还如一梦中
  * @version v1.0
  * @date：2011-11-10 下午11:52:13
  */
 public class AbThreadFactory {
-	
+
 	/** 任务执行器. */
 	public static Executor mExecutorService = null;
-	
+
 	/** 保存线程数量 . */
 	private static final int CORE_POOL_SIZE = 5;
-	
+
 	/** 最大线程数量 . */
-    private static final int MAXIMUM_POOL_SIZE = 64;
-    
-    /** 活动线程数量 . */
-    private static final int KEEP_ALIVE = 5;
+	private static final int MAXIMUM_POOL_SIZE = 64;
 
-    /** 线程工厂 . */
-    private static final ThreadFactory mThreadFactory = new ThreadFactory() {
-        private final AtomicInteger mCount = new AtomicInteger(1);
+	/** 活动线程数量 . */
+	private static final int KEEP_ALIVE = 5;
 
-        public Thread newThread(Runnable r) {
-            return new Thread(r, "AbThread #" + mCount.getAndIncrement());
-        }
-    };
+	/** 线程工厂 . */
+	private static final ThreadFactory mThreadFactory = new ThreadFactory() {
+		private final AtomicInteger mCount = new AtomicInteger(1);
+		public Thread newThread(Runnable r) {
+			return new Thread(r, "AbThread #" + mCount.getAndIncrement());
+		}
+	};
 
-    /** 队列. */
-    private static final BlockingQueue<Runnable> mPoolWorkQueue =
-            new LinkedBlockingQueue<Runnable>(10);
-    
-    /**
-     * 获取执行器.
-     *
-     * @return the executor service
-     */
-    public static Executor getExecutorService() { 
-        if (mExecutorService == null) { 
-        	int numCores = AbAppUtil.getNumCores();
-        	mExecutorService
-	         = new ThreadPoolExecutor(numCores * CORE_POOL_SIZE,numCores * MAXIMUM_POOL_SIZE,numCores * KEEP_ALIVE,
-                    TimeUnit.SECONDS, mPoolWorkQueue, mThreadFactory);
-        }
-        Process.setThreadPriority(Process.THREAD_PRIORITY_BACKGROUND);
-        return mExecutorService;
-    } 
-	
-	
+	/** 队列. */
+	private static final BlockingQueue<Runnable> mPoolWorkQueue = new LinkedBlockingQueue<Runnable>(10);
+
+	/**
+	 * 获取执行器.
+	 *
+	 * @return the executor service
+	 */
+	public static Executor getExecutorService() {
+		if (mExecutorService == null) {
+			int numCores = AbAppUtil.getNumCores();
+			mExecutorService = new ThreadPoolExecutor(numCores * CORE_POOL_SIZE, numCores * MAXIMUM_POOL_SIZE, numCores * KEEP_ALIVE, TimeUnit.SECONDS, mPoolWorkQueue, mThreadFactory);
+		}
+		Process.setThreadPriority(Process.THREAD_PRIORITY_BACKGROUND);
+		return mExecutorService;
+	}
+
 }

@@ -17,8 +17,6 @@ package org.kymjs.kjframe.http;
 
 import java.util.concurrent.BlockingQueue;
 
-import org.kymjs.kjframe.bitmap.KJHttp;
-
 import android.os.Process;
 
 import com.tony.selene.util.KJLoger;

@@ -487,7 +487,7 @@ public class HttpUtils {
         }
 
         protected HttpResponse doInBackground(String... url) {
-            if (ArrayUtils.isEmpty(url)) {
+            if (TCArrayUtils.isEmpty(url)) {
                 return null;
             }
             return httpGet(url[0]);
@@ -520,7 +520,7 @@ public class HttpUtils {
         }
 
         protected HttpResponse doInBackground(HttpRequest... httpRequest) {
-            if (ArrayUtils.isEmpty(httpRequest)) {
+            if (TCArrayUtils.isEmpty(httpRequest)) {
                 return null;
             }
             return httpGet(httpRequest[0]);

@@ -58,10 +58,10 @@ public class StringUtils {
      * @param actual
      * @param expected
      * @return
-     * @see ObjectUtils#isEquals(Object, Object)
+     * @see TCObjectUtils#isEquals(Object, Object)
      */
     public static boolean isEquals(String actual, String expected) {
-        return ObjectUtils.isEquals(actual, expected);
+        return TCObjectUtils.isEquals(actual, expected);
     }
 
     /**

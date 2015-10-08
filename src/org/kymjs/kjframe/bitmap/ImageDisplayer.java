@@ -20,6 +20,7 @@ import java.util.LinkedList;
 
 import org.kymjs.kjframe.http.HttpCallBack;
 import org.kymjs.kjframe.http.HttpConfig;
+import org.kymjs.kjframe.http.KJHttp;
 import org.kymjs.kjframe.http.KJHttpException;
 import org.kymjs.kjframe.http.Request;
 

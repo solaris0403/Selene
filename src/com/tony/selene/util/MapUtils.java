@@ -168,7 +168,7 @@ public class MapUtils {
         }
 
         for (Entry<K, V> entry : map.entrySet()) {
-            if (ObjectUtils.isEquals(entry.getValue(), value)) {
+            if (TCObjectUtils.isEquals(entry.getValue(), value)) {
                 return entry.getKey();
             }
         }

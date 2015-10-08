@@ -22,8 +22,7 @@ public class TCActivityUtils {
 	public static void startActivity(Activity context, Class<?> clazz, boolean isFinish) {
 		Intent intent = new Intent(context, clazz);
 		context.startActivity(intent);
-		if (isFinish) {
+		if (isFinish)
 			context.finish();
-		}
 	}
 }

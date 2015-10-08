@@ -26,7 +26,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.tony.selene.activity.TCBaseActivity;
-import com.tony.selene.util.AbDateUtil;
+import com.tony.selene.util.TCDateUtils;
 import com.tony.selene.util.AbDialogUtil;
 import com.tony.selene.util.AbStrUtil;
 import com.tony.selene.wheel.AbWheelView.AbOnWheelChangedListener;
@@ -114,7 +114,7 @@ public class AbWheelUtil {
 			mWheelViewD.setAdapter(new AbNumericWheelAdapter(1, 30));
 		} else {
 			// 闰年
-			if (AbDateUtil.isLeapYear(year)){
+			if (TCDateUtils.isLeapYear(year)){
 				mWheelViewD.setAdapter(new AbNumericWheelAdapter(1, 29));
 			}else{
 				mWheelViewD.setAdapter(new AbNumericWheelAdapter(1, 28));
@@ -140,7 +140,7 @@ public class AbWheelUtil {
 				} else if (list_little.contains(String.valueOf(mWheelViewM.getCurrentItem() + 1))) {
 					mWheelViewD.setAdapter(new AbNumericWheelAdapter(1, 30));
 				} else {
-					if (AbDateUtil.isLeapYear(year_num))
+					if (TCDateUtils.isLeapYear(year_num))
 						mWheelViewD.setAdapter(new AbNumericWheelAdapter(1, 29));
 					else
 						mWheelViewD.setAdapter(new AbNumericWheelAdapter(1, 28));
@@ -161,7 +161,7 @@ public class AbWheelUtil {
 					mWheelViewD.setAdapter(new AbNumericWheelAdapter(1, 30));
 				} else {
 					int year_num = mWheelViewY.getCurrentItem() + startYear;
-					if (AbDateUtil.isLeapYear(year_num))
+					if (TCDateUtils.isLeapYear(year_num))
 						mWheelViewD.setAdapter(new AbNumericWheelAdapter(1, 29));
 					else
 						mWheelViewD.setAdapter(new AbNumericWheelAdapter(1, 28));
@@ -258,7 +258,7 @@ public class AbWheelUtil {
 				}
 			}else{
 				if(i==2){
-					if(AbDateUtil.isLeapYear(defaultYear)){
+					if(TCDateUtils.isLeapYear(defaultYear)){
 						for(int j=1;j<28;j++){
 							textDMList.add(i+"月"+" "+j+"日");
 							textDMDateList.add(defaultYear+"-"+i+"-"+j);

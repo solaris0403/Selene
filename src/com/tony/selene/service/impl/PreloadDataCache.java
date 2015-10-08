@@ -14,8 +14,8 @@ import android.net.NetworkInfo;
 
 import com.tony.selene.entity.CacheObject;
 import com.tony.selene.service.CacheFullRemoveType;
-import com.tony.selene.util.ListUtils;
-import com.tony.selene.util.ObjectUtils;
+import com.tony.selene.util.TCListUtils;
+import com.tony.selene.util.TCObjectUtils;
 import com.tony.selene.util.SerializeUtils;
 import com.tony.selene.util.SystemUtils;
 
@@ -113,7 +113,7 @@ public class PreloadDataCache<K, V> extends SimpleCache<K, V> {
         }
 
         // if list is not null, preload data
-        if (!ListUtils.isEmpty(keyList)) {
+        if (!TCListUtils.isEmpty(keyList)) {
             preloadDataForward(key, keyList, forwardCacheNumber);
             preloadDataBackward(key, keyList, backwardCacheNumber);
         }
@@ -187,7 +187,7 @@ public class PreloadDataCache<K, V> extends SimpleCache<K, V> {
         }
 
         // if list is not null, preload data
-        if (!ListUtils.isEmpty(keyList)) {
+        if (!TCListUtils.isEmpty(keyList)) {
             preloadDataForward(key, keyList, forwardCacheNumber);
             preloadDataBackward(key, keyList, backwardCacheNumber);
         }
@@ -213,12 +213,12 @@ public class PreloadDataCache<K, V> extends SimpleCache<K, V> {
      */
     protected int preloadDataForward(K key, List<K> keyList, int cacheCount) {
         int gettingDataCount = 0;
-        if (key != null && !ListUtils.isEmpty(keyList) && onGetDataListener != null) {
+        if (key != null && !TCListUtils.isEmpty(keyList) && onGetDataListener != null) {
             int cachedCount = 0;
             boolean beginCount = false;
             for (int i = 0; i < keyList.size() && cachedCount <= cacheCount; i++) {
                 K k = keyList.get(i);
-                if (ObjectUtils.isEquals(k, key)) {
+                if (TCObjectUtils.isEquals(k, key)) {
                     beginCount = true;
                     continue;
                 }
@@ -252,12 +252,12 @@ public class PreloadDataCache<K, V> extends SimpleCache<K, V> {
      */
     protected int preloadDataBackward(K key, List<K> keyList, int cacheCount) {
         int gettingDataCount = 0;
-        if (key != null && !ListUtils.isEmpty(keyList) && onGetDataListener != null) {
+        if (key != null && !TCListUtils.isEmpty(keyList) && onGetDataListener != null) {
             int cachedCount = 0;
             boolean beginCount = false;
             for (int i = keyList.size() - 1; i >= 0 && cachedCount <= cacheCount; i--) {
                 K k = keyList.get(i);
-                if (ObjectUtils.isEquals(k, key)) {
+                if (TCObjectUtils.isEquals(k, key)) {
                     beginCount = true;
                     continue;
                 }

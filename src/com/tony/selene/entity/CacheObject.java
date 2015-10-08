@@ -2,7 +2,7 @@ package com.tony.selene.entity;
 
 import java.io.Serializable;
 
-import com.tony.selene.util.ObjectUtils;
+import com.tony.selene.util.TCObjectUtils;
 
 /**
  * Object in cache
@@ -187,7 +187,7 @@ public class CacheObject<V> implements Serializable, Comparable<CacheObject<V>> 
      */
     @Override
     public int compareTo(CacheObject<V> o) {
-        return o == null ? 1 : ObjectUtils.compare(this.data, o.data);
+        return o == null ? 1 : TCObjectUtils.compare(this.data, o.data);
     }
 
     /**
@@ -201,7 +201,7 @@ public class CacheObject<V> implements Serializable, Comparable<CacheObject<V>> 
         }
 
         CacheObject<V> obj = (CacheObject<V>)(o);
-        return (ObjectUtils.isEquals(this.data, obj.data) && this.enterTime == obj.enterTime
+        return (TCObjectUtils.isEquals(this.data, obj.data) && this.enterTime == obj.enterTime
                 && this.priority == obj.priority && this.isExpired == obj.isExpired && this.isForever == obj.isForever);
     }
 

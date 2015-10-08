@@ -443,7 +443,7 @@ public class PackageUtils {
 
         ActivityManager activityManager = (ActivityManager)context.getSystemService(Context.ACTIVITY_SERVICE);
         List<RunningTaskInfo> tasksInfo = activityManager.getRunningTasks(1);
-        if (ListUtils.isEmpty(tasksInfo)) {
+        if (TCListUtils.isEmpty(tasksInfo)) {
             return null;
         }
         try {

@@ -18,7 +18,7 @@ import com.tony.selene.dao.impl.HttpCacheDaoImpl;
 import com.tony.selene.entity.HttpRequest;
 import com.tony.selene.entity.HttpResponse;
 import com.tony.selene.service.impl.ImageCache;
-import com.tony.selene.util.ArrayUtils;
+import com.tony.selene.util.TCArrayUtils;
 import com.tony.selene.util.HttpUtils;
 import com.tony.selene.util.SqliteUtils;
 import com.tony.selene.util.StringUtils;
@@ -118,7 +118,7 @@ public class HttpCache {
         String requestCacheControl = request.getRequestProperty(HttpConstants.CACHE_CONTROL);
         if (!StringUtils.isEmpty(requestCacheControl)) {
             String[] requestCacheControls = requestCacheControl.split(",");
-            if (!ArrayUtils.isEmpty(requestCacheControls)) {
+            if (!TCArrayUtils.isEmpty(requestCacheControls)) {
                 List<String> requestCacheControlList = new ArrayList<String>();
                 for (String s : requestCacheControls) {
                     if (s == null) {
@@ -353,7 +353,7 @@ public class HttpCache {
         }
 
         protected HttpResponse doInBackground(String... url) {
-            if (ArrayUtils.isEmpty(url)) {
+            if (TCArrayUtils.isEmpty(url)) {
                 return null;
             }
             return httpGet(url[0]);
@@ -386,7 +386,7 @@ public class HttpCache {
         }
 
         protected HttpResponse doInBackground(HttpRequest... httpRequest) {
-            if (ArrayUtils.isEmpty(httpRequest)) {
+            if (TCArrayUtils.isEmpty(httpRequest)) {
                 return null;
             }
             return httpGet(httpRequest[0]);

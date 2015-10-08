@@ -151,7 +151,7 @@ public class FileUtils {
 	 *             if an error occurs while operator FileWriter
 	 */
 	public static boolean writeFile(String filePath, List<String> contentList, boolean append) {
-		if (ListUtils.isEmpty(contentList)) {
+		if (TCListUtils.isEmpty(contentList)) {
 			return false;
 		}
 

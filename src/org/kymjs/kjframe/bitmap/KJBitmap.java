@@ -25,8 +25,8 @@ import java.util.Vector;
 
 import org.kymjs.kjframe.http.Cache;
 import org.kymjs.kjframe.http.HttpCallBack;
+import org.kymjs.kjframe.http.KJHttp;
 import org.kymjs.kjframe.ui.StringUtils;
-import org.kymjs.kjframe.widget.DensityUtils;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -43,6 +43,7 @@ import android.widget.ImageView;
 
 import com.tony.selene.util.KJLoger;
 import com.tony.selene.util.SystemTool;
+import com.tony.selene.util.TCScreenUtils;
 
 /**
  * The BitmapLibrary's core classes<br>
@@ -211,10 +212,10 @@ public class KJBitmap {
         int w = imageView.getWidth();;
         int h = imageView.getHeight();
         if (w == 0) {
-            w = DensityUtils.getScreenW(imageView.getContext()) / 2;
+            w = TCScreenUtils.getScreenWidth(imageView.getContext()) / 2;
         }
         if (h == 0) {
-            h = DensityUtils.getScreenH(imageView.getContext()) / 2;
+            h = TCScreenUtils.getScreenHeight(imageView.getContext()) / 2;
         }
         display(imageView, imageUrl, w, h, loadBitmap, errorBitmap, callback);
     }

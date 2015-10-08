@@ -32,6 +32,5 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Property {
     public String column() default "";
-
     public String defaultValue() default "";
 }

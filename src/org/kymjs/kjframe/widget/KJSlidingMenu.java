@@ -15,6 +15,8 @@
  */
 package org.kymjs.kjframe.widget;
 
+import com.tony.selene.util.TCScreenUtils;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.util.AttributeSet;
@@ -60,7 +62,7 @@ import android.widget.LinearLayout;
 
     public KJSlidingMenu(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        mScreenWidth = DensityUtils.getScreenW(context);
+        mScreenWidth = TCScreenUtils.getScreenWidth(context);
         mMenuRightPadding = (int) (mScreenWidth * 0.27);
     }
 

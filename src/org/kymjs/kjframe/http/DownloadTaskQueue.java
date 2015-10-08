@@ -18,8 +18,6 @@ package org.kymjs.kjframe.http;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.kymjs.kjframe.bitmap.KJHttp;
-
 import android.os.Looper;
 
 /**

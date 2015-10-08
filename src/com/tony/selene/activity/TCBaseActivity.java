@@ -13,14 +13,14 @@ public abstract class TCBaseActivity extends FragmentActivity {
 	@Override
 	protected void onCreate(Bundle arg0) {
 		super.onCreate(arg0);
-		int layoutId = getLayoutId();
-		if (layoutId != 0) {
-			setContentView(layoutId);
-			//Clear default background
-			getWindow().setBackgroundDrawable(null);
-		}
+//		int layoutId = getLayoutId();
+//		if (layoutId != 0) {
+//			setContentView(layoutId);
+//			//Clear default background
+//			getWindow().setBackgroundDrawable(null);
+//		}
 		TCActivityManager.getInstance().addActivity(this);
-		preliminary();
+		//preliminary();
 	}
 
 	/**
@@ -28,31 +28,31 @@ public abstract class TCBaseActivity extends FragmentActivity {
 	 * @Description 布局文件ID
 	 * @return int
 	 */
-	protected abstract int getLayoutId();
+//	protected abstract int getLayoutId();
 
 	/**
 	 * @Title preliminary
 	 * @Description 向用户展示信息前的准备工作在这个方法里处理
 	 * @return void
 	 */
-	protected void preliminary() {
-		setupViews();
-		initialized();
-	}
+//	protected void preliminary() {
+//		setupViews();
+//		initialized();
+//	}
 
 	/**
 	 * @Title setupViews
 	 * @Description 初始化组件
 	 * @return void
 	 */
-	protected abstract void setupViews();
+//	protected abstract void setupViews();
 
 	/**
 	 * @Title initialized
 	 * @Description 初始化数据
 	 * @return void
 	 */
-	protected abstract void initialized();
+//	protected abstract void initialized();
 
 	/*
 	 * (非 Javadoc) 带有右进右出动画的退出

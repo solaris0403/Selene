@@ -52,12 +52,9 @@ public interface Cache {
     public static class Entry {
         public byte[] data;
         public String etag; // 为cache标记一个tag
-
         public long serverDate; // 本次请求成功时的服务器时间
         public long ttl; // 有效期,System.currentTimeMillis()
-
         public Map<String, String> responseHeaders = Collections.emptyMap();
-
         /**
          * 是否已过期
          */
@@ -65,5 +62,4 @@ public interface Cache {
             return this.ttl < System.currentTimeMillis();
         }
     }
-
 }

@@ -102,7 +102,6 @@ public class AbTaskPool{
                         	item.getListener().get();
                             result.put(item.toString(), null);
                         }
-                        
                     	//交由UI线程处理 
                         Message msg = handler.obtainMessage(); 
                         msg.obj = item; 

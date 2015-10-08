@@ -30,7 +30,7 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.tony.selene.util.AbDateUtil;
+import com.tony.selene.util.TCDateUtils;
 import com.tony.selene.util.AbFileUtil;
 import com.tony.selene.util.AbViewUtil;
 
@@ -228,7 +228,7 @@ public class AbListViewHeader extends LinearLayout {
 				tipsTextview.setText("下拉刷新");
 				
 				if(lastRefreshTime==null){
-					lastRefreshTime = AbDateUtil.getCurrentDate(AbDateUtil.dateFormatHMS);
+					lastRefreshTime = TCDateUtils.getCurrentDate(TCDateUtils.dateFormatHMS);
 					headerTimeView.setText("刷新时间：" + lastRefreshTime);
 				}else{
 					headerTimeView.setText("上次刷新时间：" + lastRefreshTime);
@@ -241,7 +241,7 @@ public class AbListViewHeader extends LinearLayout {
 					arrowImageView.startAnimation(mRotateUpAnim);
 					tipsTextview.setText("松开刷新");
 					headerTimeView.setText("上次刷新时间：" + lastRefreshTime);
-					lastRefreshTime = AbDateUtil.getCurrentDate(AbDateUtil.dateFormatHMS);
+					lastRefreshTime = TCDateUtils.getCurrentDate(TCDateUtils.dateFormatHMS);
 					
 				}
 				break;

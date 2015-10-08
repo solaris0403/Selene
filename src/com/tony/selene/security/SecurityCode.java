@@ -2,7 +2,7 @@ package com.tony.selene.security;
 
 import java.util.Random;
 
-import com.tony.selene.util.DensityUtils;
+import com.tony.selene.util.TCDensityUtils;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -42,7 +42,7 @@ public class SecurityCode {
 	 */
 	public Bitmap createBitmap(int width, int height, int size, Context context) {
 
-		int textSize = DensityUtils.sp2px(context, size);
+		int textSize = TCDensityUtils.sp2px(context, size);
 
 		Bitmap codeBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
 		Canvas canvas = new Canvas(codeBitmap);

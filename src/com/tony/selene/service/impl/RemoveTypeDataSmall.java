@@ -2,7 +2,7 @@ package com.tony.selene.service.impl;
 
 import com.tony.selene.entity.CacheObject;
 import com.tony.selene.service.CacheFullRemoveType;
-import com.tony.selene.util.ObjectUtils;
+import com.tony.selene.util.TCObjectUtils;
 
 /**
  * Remove type when cache is full.<br/>
@@ -16,6 +16,6 @@ public class RemoveTypeDataSmall<T> implements CacheFullRemoveType<T> {
 
     @Override
     public int compare(CacheObject<T> obj1, CacheObject<T> obj2) {
-        return ObjectUtils.compare(obj1.getData(), obj2.getData());
+        return TCObjectUtils.compare(obj1.getData(), obj2.getData());
     }
 }

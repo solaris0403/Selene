@@ -44,6 +44,7 @@ import android.os.Environment;
 import android.os.StatFs;
 
 import com.tony.selene.global.AbAppConfig;
+import com.tony.selene.security.TCMd5;
 
 // TODO: Auto-generated Javadoc
 
@@ -511,7 +512,7 @@ public class AbFileUtil {
         }
         String name = null;
         try {
-            name = AbMd5.MD5(url);
+            name = TCMd5.encode(url);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -537,7 +538,7 @@ public class AbFileUtil {
             if(AbStrUtil.isEmpty(suffix)){
                 suffix = ".ab";
             }
-            name = AbMd5.MD5(url)+suffix;
+            name = TCMd5.encode(url)+suffix;
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -563,7 +564,7 @@ public class AbFileUtil {
 			if(AbStrUtil.isEmpty(suffix)){
 				suffix = ".ab";
 			}
-			name = AbMd5.MD5(url)+suffix;
+			name = TCMd5.encode(url)+suffix;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
